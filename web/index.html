@@ -15,17 +15,10 @@
         <script src='/web/script-seccio-frontendproductes.js'></script>
         <script src='/web/script-utils.js'></script>
         <script src='/web/script.js'></script>
-
-        <!-- Icones d'aplicació per a navegadors d'escriptori, webapps iOS i webapps Android -->
-        <!-- Icones generats amb: https://www.favicon-generator.org/ -->
-        <link href="/web/appicons/android-icon-192x192.png" rel="icon" type="image/png" sizes="192x192">
-        <link href="/web/appicons/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/web/appicons/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        <link href="/web/appicons/manifest.json" rel="manifest">
     </head>
     <body onload='inicia()'>
+        <div id='antesfrontendMenuDesktop'class='flexRow desktop'></div>
+    
         <div id='frontendMenuWeb' class='flexRow desktop'>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendHome")'>Inici</div>
             <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
@@ -36,35 +29,182 @@
             <div id='botoGestioProductesWeb' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
             <div id='botoLogoutWeb' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
         </div>
-        <div id='frontendMenuMobil' class='flexColumn mobile'>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendHome")'>Inici</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendProductes")'>Productes</div>
-            <div class='botoMenu' onclick='navegacio.canviaSeccio("frontendContacte")'>Contacte</div>
-            <div id='botoLoginMobil' class='botoMenu' onclick='popups.mostraPopup("popupLogin")'>Login backoffice</div>
-            <div id='botoGestioUsuarisMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeUsuaris")'>Gestió usuaris</div>
-            <div id='botoGestioProductesMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
-            <div id='botoLogoutMobil' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
+       
+        <div id='frontendMenuMobil' class='flexColumn mobile' ontouchend='amagaMenu(event)'>
+            <div id='menuContainer'>
+
+                <div class='botoMenu' ontouchend='navegacio.canviaSeccio("frontendHome")'>Inici</div>
+                <div class='botoMenu' ontouchend='navegacio.canviaSeccio("frontendPresentacio")'>Presentació</div>
+                <div class='botoMenu' ontouchend='navegacio.canviaSeccio("frontendProductes")'>Productes</div>
+                <div class='botoMenu' ontouchend='navegacio.canviaSeccio("frontendContacte")'>Contacte</div>
+                
+                
+
+                <div id='botoGestioUsuarisMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeUsuaris")'>Gestió usuaris</div>
+                <div id='botoGestioProductesMobil' class='botoMenu none' onclick='navegacio.canviaSeccio("backofficeProductes")'>Gestió productes</div>
+                <div id='botoLogoutMobil' class='botoMenu none' onclick='login.tancaLaSessio()'>Sortir</div>
+                <div id='cruz'><i class='material-icons' onclick=''>clear</i>
+                    <div id='botoLoginMobil' class='botoMenu' ontouchend='popups.mostraPopup("popupLogin")'>Login backoffice</div>
+                </div>
+                
+            </div>
         </div>
-        <div id='frontendHome'>
+        <div class='flexColumn mobile' ontouchend='mostraMenu(event)'><i class='material-icons menubutton'>menu</i></div>
+
+        <div id='frontendHome' class="flexColumn">
+            <div>
+                <img id='ImagenInici' src="/web/imatges/agencias-de-viajes-franquicias.jpg"/>
+            </div>
+            
+            <br/>
             Pàgina principal
+        
         </div>
-        <div id='frontendPresentacio'>
-            Pàgina amb una presentacio de l'empresa
+
+        <div id='frontendPresentacio' class="flexRow" > 
+            <h1>Agencia de viajes online</h1>
+            <div id='frontendPresentacio2' class="flexRow" >                 
+                <ul>
+                    <li><a href="#"><b>Qui som</b></a></li>
+                    Som una nova agencia de viatges "ViajesHueso" on hem fet estudis durant molts anys per crear una nova agencia el més comode i barat posible per la satifació dels clients 
+                    <li><a href="#"><b>Que oferim</b></a></li>
+                    Oferim consells, viatges, Hotels, complements com cotxes... Per el bon viatge d'un client ViatgesHueso on tenim les millors ofertes/complements de agencies online, Molt per tan poc
+                </ul>
+            </div>  
+            <div id='frontendPresentacio3' class="flexRow">
+                <h3>Les millors ofertes de vol</h3>
+            </div>
+            <div id='frontendPresentacio4' class="flexRow" > 
+                <p>Estalviar és de llest i per això una rumber com cal el que busca són els preus apañaos de vol + hotel de Rumbo. L'esquirol i als teus bitllets d'avió juntament amb un hotel ben Cuqui amb el cercador de viatges i viure que són dos dies. Nosaltres com agència de viatges, ens encarreguem d'aconseguir les millors ofertes. Tu a gaudir.</p>
+            </div>
+            <div id="frontendPresentacioTaula1">
+                <h3>Ofertes d'hotels per a les destinacions més bonics</h3>
+            </div>
+            <div id="frontendArribaTaula">
+             <p>A les agències de viatges sabem que qualsevol data per viatjar és bona si el destí ho mereix. Ull! el destí i el rumbero. I és que els nostres viatgers rumberos s'ho mereixen toíto tó. Així que entra i utilitza el cercador d'hotels: trobaràs totes les ofertes pa rumberos avispaos que saben el que és bo (i baratico, escolti).</p>
+
+            </div>
+            <div id="frontendPresentacioTaula2">
+                <br>
+                <table id="Taula">
+                    <tbody>
+                        <tr>
+                            <th>Hotels</th>
+                            <td><div style="text-align:right">
+                            <th>Descripció</th>
+                            </div>
+                            <th>Demanda</th>
+                            <th><i class='material-icons' onclick=''>stars</i></th>
+                        </td></tr>
+                        <tr>
+                            <td><b>Madrid</b></td>
+                            <td>No hi ha viatge més rumber que una visita a la castissa capital d'Espanya. La Porta de el Sol, la d'Alcalá, al Retiro són llocs obligats però no els únics. En Rumb t'oferim allotjaments per a qualsevol pressupost i moltes opinions de viatgers perquè encertis a la primera i descobreixis el Madrid més pintón.</td>
+                            <td>Madrid és la capital central d'Espanya amb elegants bulevards i amplis parcs molt cuidats</td>
+                            <td>Mitjana/Alta</td>
+                            <td>4/5</td>
+                        </tr>
+                        <tr>
+                            <td><b>Barcelona</b></td>
+                             <td>Barcelona és cosmopolita, és art, és moda, és mar, és història, és ... que ho té tot, home ja! I clar que has de visitar la Sagrada Família, el parc Güell i el barri Gòtic, però la gràcia està en empapar de l'ambient d'una ciutat viva, bulliciosa, ¡un puntàs! I per això, en Rumb tenim de tó, de tó: posa't en mode "donar-ho tot" que Barcelona t'espera.</td>
+                             <td>Regió de Catalunya a Espanya, és coneguda pel seu art i arquitectura. La fantàstica església de la Sagrada Família i altres fites modernistes dissenyats per Antoni Gaudí adornen la ciutat</td>
+                             <td>Alta</td>
+                             <td>5/5</td>
+                        </tr>
+                        <tr>
+                            <td><b>Benidorm</b></td>
+                             <td>Solet, platja, fiestuqui i aquest mix de rumberos nacionals i guiris que fa de Benidorm una destinació amb molt flow. I en Rumb t'oferim allotjaments per a tots els gustos i butxaques. Treu aquest cos serrà a el sol i gaudeix d'aquesta platgeta bona amb la Mediterrània als teus peus (pla de dia) i per la nit ... posa't guapo que la nit és jove.</td>
+                             <td>Balneari costaner a la costa est d'Espanya, part de la famosa Costa Blanca de la regió de València.</td>
+                             <td>Mitjana</td>
+                             <td>4/5</td>
+                        </tr>
+                        <tr>
+                            <td><b>Valencia</b></td>
+                             <td>L'oferta d'allotjaments a València és de les millors de país, però ... la gràcia està en pagar menys pel millor, no? Doncs això és molt rumbero. Entra al nostre web i flipa amb el munt de serveis que pots triar. Sí, baby, tenim el perfecte per a tu. De veritat de la bona.</td>
+                             <td>La ciutat portuària de València se situa en la costa sud-est d'Espanya, on el riu Túria s'uneix a la mar Mediterrània. És famosa per la Ciutat de les Arts i les Ciències, amb estructures futurísticas, com el planetari, l'oceanari i un museu interactiu</td>
+                             <td>Baixa</td>
+                             <td>3,5/5</td>
+                        </tr>
+                        <tr>
+                            <td><b>Sevilla</b></td>
+                             <td>Tot a Sevilla té art pa treure el sentío: el clima, la gastronomia, l'art, la seva gent. Així que no pots deixar de visitar la Torre de l'Or, la Giralda o els Reales Alcázares i tants altres llocs tan rumberos. Fes un ull abans a les opinions d'altres viatgers i triï l'hotel amb més "follet" per a una escapada d'allò més flamenca.</td>
+                             <td>Sevilla és la capital de la regió Andalusia, al sud d'Espanya. És famosa per la seva dansa flamenc, particularment al seu barri de Triana. Els principals llocs icònics inclouen el complex de castells adornats de l'Alcàsser</td>
+                             <td>Mitjana</td>
+                             <td>4/5</td>
+                        </tr>
+                        <tr>
+                            <td><b>Malaga</b></td>
+                             <td>Sol + caloreta + saraus + platja + gaudi màxim = Rumbero de manual a Màlaga. Tot això i molt més t'espera en aquesta capital andalusa. Combina-ho amb unes visites a l'Thyssen i a el Museu Picasso, prova la gastronomia local -et vas a rechupetear els dits una i altra vegada- i aprofita tota l'oferta d'oci, que és molta. A què ve de gust ja? Pilla com més aviat un hotelet mico en Rumb: només trobaràs del bo, el millor i si és per un preu apañao, ja ni t'explico!</td>
+                             <td>Málaga es una ciudad portuaria en la Costa del Sol, en el sur de España, conocida por sus hoteles de muchos pisos y los centros turísticos que sobresalen de sus playas de arena amarilla. Sobre ese moderno perfil, en dos colinas, se alzan las dos enormes ciudadelas de la ciudad, la Alcazaba y las ruinas de Gibralfaro, remanentes del régimen morisco.</td>
+                             <td>Baixa/Mitjana</td>
+                             <td>3/5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div id="TablaMovil">
+                <h3>Madrid</h3>
+                <p>Madrid és la capital central d'Espanya amb elegants bulevards i amplis parcs molt cuidats</p>
+                <p>Mitjana/Alta</p>
+                <p>4/5</p>
+                <h3>Barcelona</h3>
+                <p>Regió de Catalunya a Espanya, és coneguda pel seu art i arquitectura. La fantàstica església de la Sagrada Família i altres fites modernistes dissenyats per Antoni Gaudí adornen la ciutat</p>
+                <p>Alta</p>
+                <p>5/5</p>
+                <h3>Benidorm</h3>
+                <p>Balneari costaner a la costa est d'Espanya, part de la famosa Costa Blanca de la regió de València.</p>
+                <p>Mitjana</p>
+                <p>4/5</p>
+                <h3>Valencia</h3>
+                <p>La ciutat portuària de València se situa en la costa sud-est d'Espanya, on el riu Túria s'uneix a la mar Mediterrània. És famosa per la Ciutat de les Arts i les Ciències, amb estructures futurísticas, com el planetari, l'oceanari i un museu interactiu</p>
+                <p>Baixa</p>
+                <p>3,5/5</p>
+                <h3>Sevilla</h3>
+                <p>Sevilla és la capital de la regió Andalusia, al sud d'Espanya. És famosa per la seva dansa flamenc, particularment al seu barri de Triana. Els principals llocs icònics inclouen el complex de castells adornats de l'Alcàsser</p>
+                <p>Mitjana</p>
+                <p>4/5</p>
+                <h3>Malaga</h3>
+                <p>Málaga es una ciudad portuaria en la Costa del Sol, en el sur de España, conocida por sus hoteles de muchos pisos y los centros turísticos que sobresalen de sus playas de arena amarilla. Sobre ese moderno perfil, en dos colinas, se alzan las dos enormes ciudadelas de la ciudad, la Alcazaba y las ruinas de Gibralfaro, remanentes del régimen morisco.</p>
+                <p>Baixa/Mitjana</p>
+                <p>3/5</p>
+            </div>
+         </div>
+        
         </div>
         <div id='frontendProductes'>
             <div id='productesLoading'>Carregant productes ...</div>
             <div id='productesContinguts' class='flexColumn'></div>
         </div>
-        <div id='frontendContacte'>
-            Pàgina amb informacio de contacte
+        <div id='frontendContacte' class="flexColumn">
+            <div id='grupImg'>
+                <img id='ImagenContacte' src="/web/imatges/instagram.png"/>
+                <img id='ImagenContacte' src="/web/imatges/twitter.png"/>
+                <img id='ImagenContacte' src="/web/imatges/facebook.png"/>
+                <img id='ImagenContacte' src="/web/imatges/gmail.png"/>
+            </div>
+            <br>
+            <div id='mapa'>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191793.9998814917!2d1.8857971450003745!3d41.313622212716794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a499dcbb87ab79%3A0xaaa112bccfb7441f!2sBuscoUnViaje.com!5e0!3m2!1ses!2ses!4v1583839124178!5m2!1ses!2ses" width="450" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+            </div>
+            
+           
+            
+            <div id='grupImgMvl'>
+                <img id='ImagenContacte2' src="/web/imatges/instagram.png"/>
+                <img id='ImagenContacte2' src="/web/imatges/twitter.png"/>
+                <img id='ImagenContacte2' src="/web/imatges/facebook.png"/>
+                <img id='ImagenContacte2' src="/web/imatges/gmail.png"/>
         </div>
+           
+            </div>
         <div id='backofficeUsuaris'>
             <div id='backofficeUsuarisLoading'>Carregant usuaris ...</div>
             <div id='backofficeUsuarisContinguts' class='flexColumn'></div>
         </div>
         <div id='backofficeProductes'>
             Pàgina per fer la gestió dels productes
+
         </div>
         <div id='popups' onclick='popups.amagaAmbClick(event)'>
             <div id='popupLogin' class='flexColumn'>

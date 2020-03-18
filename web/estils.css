@@ -15,50 +15,97 @@ table, th, td {
     border-collapse: collapse;
     border: 1px solid black;
 }
-
-.botoMenu {
-    color: blue;
-    cursor: pointer;
-    margin: 0 16px;
-}
-
-.botoMenu:hover {
-    text-decoration: underline;
-}
-
 body {
     font-family: "Open Sans";
 }
-
+body > div {
+    display: none;
+}
 body > #frontendHome {
     display: flex;
 }
+#antesfrontendMenuDesktop {
+    background-color: rgb(8, 241, 245);
+    background-image: url("/web/imatges/logo.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    
+}
+    
+#frontendMenuWeb {
+    background-color: darkturquoise;
+    flex-direction: row;
+    min-height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+a:hover{
 
-body > #frontendPresentacio {
-    display: none;
 }
 
-body > #frontendProductes {
-    display: none;
+#frontendMenuMobil{
+    background-color: darkturquoise;
+    align-items: stretch;
 }
 
-body > #frontendProductes > #productesContinguts {
+#frontendHome {
+
+}
+
+    
+
+.botoMenu {
+    color: white;
+    cursor: pointer;
+    margin: 0 16px;
+  
+    align-items: center;
+    
+
+}
+.botoMenu:hover {
+    text-decoration: underline;
+}
+@media only screen and (max-device-width: 599px) {
+    .botoMenu:nth-child(odd) {
+        background-color: blue; background-color: rgb(159, 171, 182);
+
+    }
+    .botoMenu:nth-child(2) {
+        background-color: rgb(117, 117, 117);
+    }
+    .botoMenu:nth-child(4) {
+        background-color: rgb(117, 117, 117);
+    }
+    #ImagenInici{
+        height: 100px;
+        max-width: 100%;
+    
+    }
+  
+    
+}
+#botoLoginMobil{
+    margin: 16 0px;
+    background-color: red;
+    align-items: center;
+    height: 30px;
+
+}
+#botoGestioProductesMobil{
+    background-color: grey;
+}
+#productesContinguts {
     width: 100%;
 }
-
-body > #frontendContacte {
-    display: none;
+#cruz {
+    justify-content: space-evenly;
 }
-
-body > #backofficeUsuaris {
-    display: none;
-}
-
-body > #backofficeProductes {
-    display: none;
-}
-
-body > #popups {
+#popups {
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     display: none;
@@ -69,11 +116,189 @@ body > #popups {
     height: 100%;
     width: 100%;
 }
-
 #popups > div {
     border: solid 1px black;
     background-color: lightcyan;
     display: none;
 }
+#frontendMenuMobil {
+    background-color: rgba(200, 200, 200, 0.5);
+    backdrop-filter: saturate(200%) blur(5px);
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+#menuContainer {
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    top: 100%;
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+#frontendMenuMobil > #menuContainer > div:first-child {
+    padding: 0.5em auto;
+}
+#frontendMenuMobil > #menuContainer > div {
+    border-bottom: 1px solid lightgrey;
+    padding: 0 2em;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#frontendMenuMobil > #menuContainer > div:last-child {
+    margin-bottom: 10px;
+    padding: 0.5em auto;
+}
+#frontendMenuMobil > #menuContainer > div > a {
+    color: grey;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+#frontendMenuMobil > #menuContainer > div > a:visited {
+    color: grey;
+}
+@media only screen and (min-device-width: 600px) {
+#frontendPresentacio{
+    background-color: grey;
+    color: white;
+    flex-direction: column;
+    padding-left: 2cm;
+    padding-right: 2cm;
+    padding-block-end: 1cm;
+    }
+    #TablaMovil{
+        display: none;
+        background-color: burlywood;
+    }
+    #ImagenContacte{
+        width: 100px;
+        height: 100px;
+        justify-items: center;
+       
+    }
+    #FrontendContacte{
+        justify-content: center;
+        flex-direction: column;
+    }
+    #ImagenContacte2{
+        display: none;
+        width: 100px;
+        height: 100px;
+        
+    }
+    #grupImgMvl{
+        width: 100px;
+        height: 100px;
+        
+    }  
+  
+}
+@media only screen and (max-device-width: 599px) {
+ #frontendPresentacio{
+    background-color: grey;
+    color: white;
+    flex-direction: column;
+    padding-block-end: 2mm;
+    padding-left: 2mm;
+    padding-right: 2mm;
+   }
+   #Taula {
+        display: none;
+    }
 
+    #ImagenContacte{
+        display: none;
+    }
+    #grupImg{
+        display: none;
+    }
+}
+#grupImg{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 1cm;
+    padding-block-end: 2mm;
+}
+#grupImgMvl{
+    
+}
+#frontendPresentacio2{
+background-color: rgb(187, 184, 184);
+color:black;
+}
+#frontendPresentacio3{
 
+}
+#frontendPresentacio4{
+background-color: rgb(187, 184, 184);
+
+color: black;
+}
+@media only screen and (min-device-width: 600px) {
+    #frontendPresentacioTaula2{
+        background-color: blanchedalmond;
+        color: black;
+    }
+}
+
+#frontendArribaTaula{
+ background-color: rgb(187, 184, 184);
+ color: black;
+
+}
+#botoLogoutMobil{
+    background-color: red;
+    width: 40px;
+    
+}
+#TablaMovil{
+background-color: rgb(187, 184, 184);
+
+}
+#TablaMovil> p {
+color: black;
+}
+#botoLoginWeb{
+
+}
+table, td, th{
+border:1px solid black;
+border-collapse: collapse;
+    border-color: black;
+}
+tr:nth-child(odd){
+    background-color: lightblue;
+}
+th{
+    background-color: grey;
+    color: white;
+}
+#grupImgMvl> #ImagenContacte2{
+    height: 60px;
+    width: 60px;
+    
+  
+}
+#grupImgMvl{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 1cm;
+    padding-block-end: 2mm;
+}
