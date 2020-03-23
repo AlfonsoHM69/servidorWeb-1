@@ -16,7 +16,7 @@ class Obj {
             taula = null
     
         // Forçem una espera al fer login amb codi, perquè es vegi la càrrega (TODO: esborrar-ho)
-        await utils.promiseWait(1000) 
+        await utils.promiseWait(3000) 
         
         // Mira si la taula "productes" existeix
         try {
@@ -28,13 +28,19 @@ class Obj {
         // Si la taula "productes" no existeix, en crea una i afegeix productes
         if (!taulaProductesExisteix) {
             try {
-                sql = 'CREATE TABLE productes (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, nom VARCHAR(50) NOT NULL, descripcio TEXT, preu INT(6), imatge VARCHAR(255))'
+                sql = 'CREATE TABLE productes (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, nom VARCHAR(50) NOT NULL, descripcio TEXT, preu INT(6), imatge VARCHAR(255),nou TEXT)'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Tele", "Tele molt xula", 800, "/web/imatges/producte-1.jpg")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Madrid", "capital central Espanya", 50, "/web/imatges/madrid.jpg", "-200 €")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Batidora", "Batidora molt xula", 20, "/web/imatges/producte-2.png")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Barcelona", "Regió de Catalunya a Espanya", 75, "/web/imatges/barcelona.jpeg", "-200 €")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge) VALUES ("Aspirador", "Aspirador molt xulo", 300, "/web/imatges/producte-3.jpg")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Benidorm", "Balneari costaner a la costa est de Espanya", 100, "/web/imatges/benidorm.jpg", "-200 €")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Valencia", "Es situa en la costa sud-est de Espanya", 50, "/web/imatges/valencia.jpeg", "-150 €")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Sevilla", "Es la capital de la regió Andalusia", 50, "/web/imatges/sevilla.jpg", "-200 €")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Malaga", "es una ciudad portuaria en la Costa del Sol, en el sur de España", 45, "/web/imatges/malaga.jpg", "-150 €")'
                 await db.promiseQuery(sql)
             } catch (e) {
                 console.error(e)
@@ -51,7 +57,7 @@ class Obj {
             return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})  
         }   
     
-        // Si hem aconseguit dades corectament, tornem la taula resultant
+        // Si l'usuari existeix i s'ha identificat correctament (amb codi o amb token) retornem 'ok'
         if (typeof taula === 'object' && typeof taula.length === 'number') {
             result.json({ resultat: "ok", missatge: taula })
         } else {

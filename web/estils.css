@@ -225,6 +225,24 @@ a:hover{
     #grupImg{
         display: none;
     }
+    #productesContinguts.flexColumn > img{
+        display: none;
+
+    }
+    #productesContinguts.flexColumn{
+        justify-content: center;
+        text-align: center;
+        padding-left: 1cm;
+        padding-right: 1cm;
+    }
+    #grupImgMvl{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        padding-top: 1cm;
+        padding-block-end: 2mm;
+    }
 }
 #grupImg{
     display: flex;
@@ -234,9 +252,9 @@ a:hover{
     padding-top: 1cm;
     padding-block-end: 2mm;
 }
-#grupImgMvl{
-    
-}
+
+   
+
 #frontendPresentacio2{
 background-color: rgb(187, 184, 184);
 color:black;
@@ -254,6 +272,21 @@ color: black;
         background-color: blanchedalmond;
         color: black;
     }
+    #productesContinguts.flexColumn {
+        padding-top: 1cm;
+        padding-block-end: 1cm;
+        justify-content: center;
+        padding-left: 5cm;
+        padding-right: 5cm;
+        
+    }
+    #productesContinguts.flexColumn > div{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
+    
+        
 }
 
 #frontendArribaTaula{
@@ -294,11 +327,85 @@ th{
     
   
 }
-#grupImgMvl{
+#enlace{
+    color: blue;
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-    padding-top: 1cm;
-    padding-block-end: 2mm;
+}
+
+#productesContinguts.flexColumn > img{
+width: 400px;
+height: 200px;
+padding-left: 40%;
+padding-right: 40%;
+}
+
+#productesContinguts.flexColumn {
+    background-color: blue; background-color: rgb(159, 171, 182);
+    
+    text-align: center;
+    
+}
+#productesContinguts.flexColumn :nth-child(1){
+justify-content: center;
+}
+#productesContinguts.flexColumn :nth-child(2){
+    background-color: rgb(131, 131, 201);
+    
+}
+#productesContinguts.flexColumn :nth-child(5){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(3){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(8){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(11){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(9){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(14){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(15){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(17){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(20){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(21){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(23){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(26){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(27){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(29){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(32){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(33){
+    background-color: rgb(131, 131, 201);
+}
+#productesContinguts.flexColumn :nth-child(35){
+    background-color: rgb(131, 131, 201);
+}
+#productesLoading{
+    width: 100px;
+}
+#mdl-spinner mdl-js-spinner is-active{
+    width: 100px;
 }
