@@ -17,7 +17,7 @@ class Obj {
     constructor () {
 
         this.host           = '109.237.25.44'
-        this.port           = 3002
+        this.port           = 3306
         this.db             = 'serverDB_ahueso'
         this.usr            = 'ahueso'
         this.pwd            = 'us6wfnx4'
