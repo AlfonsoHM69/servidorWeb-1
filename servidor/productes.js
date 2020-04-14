@@ -34,7 +34,7 @@ class Obj {
                 await db.promiseQuery(sql)
                 sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Barcelona", "Regió de Catalunya a Espanya", 75, "/web/imatges/barcelona.jpeg", "-200 €")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Benidorm", "Balneari costaner a la costa est de Espanya", 100, "/web/imatges/benidorm.jpg", "-200 €")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Benidorm", "Balneari a la costa est de Espanya", 100, "/web/imatges/benidorm.jpg", "-200 €")'
                 await db.promiseQuery(sql)
                 sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Valencia", "Es situa en la costa sud-est de Espanya", 50, "/web/imatges/valencia.jpeg", "-150 €")'
                 await db.promiseQuery(sql)
