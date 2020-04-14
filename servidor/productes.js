@@ -40,7 +40,7 @@ class Obj {
                 await db.promiseQuery(sql)
                 sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Sevilla", "Es la capital de la regió Andalusia", 50, "/web/imatges/sevilla.jpg", "-200 €")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Malaga", "Es una ciudad portuaria en la Costa del Sol, en el sur de España", 45, "/web/imatges/malaga.jpg", "-150 €")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Malaga", "Es una ciutat portuaria en la Costa del Sol, en el sud de España", 45, "/web/imatges/malaga.jpg", "-150 €")'
                 await db.promiseQuery(sql)
             } catch (e) {
                 console.error(e)
