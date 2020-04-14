@@ -207,9 +207,12 @@
                     
            
             </div>
-        
+        <br>
         <div id='backofficeUsuaris'>
-            <div id='backofficeUsuarisLoading'>Carregant usuaris ...</div>
+            <div id='backofficeUsuarisLoading'>
+                <div class="mdl-spinner mdl-js-spinner is-active"></div>  
+        </div>  
+               
             <div id='backofficeUsuarisContinguts' class='flexColumn'></div>
         </div>
         <div id='backofficeProductes'>
@@ -224,6 +227,7 @@
                 <input id='loginCodi' type='password' class='halfWidth' />
                 <br/>
                 <input type='button' value='entra' class='halfWidth' onclick='login.autenticaAmbFormulari()' />
+                <img src="/web/imatges/logo.png">
                 <div id='loginLoading' class='none'>Carregant ...</div>
                 <div id='loginError' class='none'>Error al fer login ...</div>
             </div>
@@ -246,7 +250,7 @@
                     <img id='backofficeUsuarisImg' src='/web/imatges/transparent.png' width='100'/>
                     <input id='backofficeUsuarisArxiu' class="dropFile" accept="image/*" type="file" onchange="seccioBackofficeUsuaris.mostraImatge()" />
                 </div>
-                
+                <img src="/web/imatges/logo.png">
                 <br/>
                 <input type='button' value='Guarda' onclick='seccioBackofficeUsuaris.guardaDadesUsuariAlServidor()'/>
                 <br/>

@@ -35,9 +35,13 @@ class Obj {
         // Si la taula "usuaris" no existeix, en crea una i afegeix l'usuari "admin@admin.com" amb codi "admin"
         if (!taulaUsuarisExisteix) {
             try {
-                sql = 'CREATE TABLE usuaris (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, correu VARCHAR(50) NOT NULL, codi VARCHAR(50) NOT NULL, token VARCHAR(50) NOT NULL, nom VARCHAR(50) NOT NULL, tipus VARCHAR(10) NOT NULL, imatge VARCHAR(255))'
+                sql = 'CREATE TABLE usuaris (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, correu VARCHAR(50) NOT NULL, codi VARCHAR(50) NOT NULL, token VARCHAR(50) NOT NULL, nom VARCHAR(50) NOT NULL, tipus VARCHAR(10) NOT NULL, imatge VARCHAR(255), nou VARCHAR(50))'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO usuaris (correu, codi, token, nom, tipus, imatge) VALUES ("admin@admin.com", "21232f297a57a5a743894a0e4a801fc3", "", "Administrador", "admin", "/web/imatges/usuari-1.png")'
+                sql = 'INSERT INTO usuaris (correu, codi, token, nom, tipus, imatge, nou) VALUES ("admin@admin.com", "21232f297a57a5a743894a0e4a801fc3", "", "Administrador", "admin", "/web/imatges/usuari-1.png", "online")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO usuaris (correu, codi, token, nom, tipus, imatge, nou) VALUES ("normal@normal.com", "21232f297a57a5a743894a0e4a801fc3", "", "Normal", "normal", "/web/imatges/usuari-2.jpg", "online")'
+                await db.promiseQuery(sql)
+                sql = 'INSERT INTO usuaris (correu, codi, token, nom, tipus, imatge, nou) VALUES ("paula@agenciavh.com", "21232f297a57a5a743894a0e4a801fc3", "", "PaulaR", "admin", "/web/imatges/usuari-3.png", "offline")'
                 await db.promiseQuery(sql)
             } catch (e) {
                 console.error(e)
