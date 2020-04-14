@@ -30,7 +30,7 @@ class Obj {
             try {
                 sql = 'CREATE TABLE productes (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, nom VARCHAR(50) NOT NULL, descripcio TEXT, preu INT(6), imatge VARCHAR(255),nou TEXT)'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Madrid", "capital central Espanya", 50, "/web/imatges/madrid.jpg", "-200 €")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Madrid", "Capital central Espanya", 50, "/web/imatges/madrid.jpg", "-200 €")'
                 await db.promiseQuery(sql)
                 sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Barcelona", "Regió de Catalunya a Espanya", 75, "/web/imatges/barcelona.jpeg", "-200 €")'
                 await db.promiseQuery(sql)
@@ -40,7 +40,7 @@ class Obj {
                 await db.promiseQuery(sql)
                 sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Sevilla", "Es la capital de la regió Andalusia", 50, "/web/imatges/sevilla.jpg", "-200 €")'
                 await db.promiseQuery(sql)
-                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Malaga", "es una ciudad portuaria en la Costa del Sol, en el sur de España", 45, "/web/imatges/malaga.jpg", "-150 €")'
+                sql = 'INSERT INTO productes (nom, descripcio, preu, imatge, nou) VALUES ("Viatge a Malaga", "Es una ciudad portuaria en la Costa del Sol, en el sur de España", 45, "/web/imatges/malaga.jpg", "-150 €")'
                 await db.promiseQuery(sql)
             } catch (e) {
                 console.error(e)
