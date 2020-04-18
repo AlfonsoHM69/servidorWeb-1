@@ -204,6 +204,11 @@ a:hover{
         height: 100px;
         
     }  
+    #backofficeUsuarisContinguts.flexColumn > div.flexRow{
+        column-count: 3; 
+        padding-top: 5mm;
+     }
+     
   
 }
 @media only screen and (max-device-width: 599px) {
@@ -243,6 +248,7 @@ a:hover{
         padding-top: 1cm;
         padding-block-end: 2mm;
     }
+    
 }
 #grupImg{
     display: flex;
@@ -446,5 +452,5 @@ justify-content: center;
     margin-inline-end: 0em;
 }
 #backofficeUsuaris{
-   
+   flex-direction: row;
 }

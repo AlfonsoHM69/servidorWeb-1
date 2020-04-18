@@ -29,11 +29,11 @@ class ObjSeccioBackofficeUsuaris {
         if (objRebut.resultat === 'ok') {
             navegacio.dadesSeccio = objRebut.missatge
 
-            codiHTML = codiHTML + '<table>'
-            codiHTML = codiHTML + '<tr>'
-            codiHTML = codiHTML + '<div><img src="/web/imatges/logo.png" width="150"  /></div>'
-            codiHTML = codiHTML + '<tr>'
+            codiHTML = codiHTML + '<div class="flexRow">'
+            codiHTML = codiHTML + '<div>'
+            codiHTML = codiHTML + '<div>'
             codiHTML = codiHTML + '<hr>'
+            
            
             for (cntUsuari = 0; cntUsuari < navegacio.dadesSeccio.length; cntUsuari = cntUsuari + 1) {
                 valor = navegacio.dadesSeccio[cntUsuari]
@@ -58,9 +58,9 @@ class ObjSeccioBackofficeUsuaris {
                 } else {
                     codiHTML = codiHTML + '<div></div>'
                 }
-                codiHTML = codiHTML + '</tr>'
+                codiHTML = codiHTML + '</div>'
             }
-            codiHTML = codiHTML + '</table>'
+            codiHTML = codiHTML + '</div>'
             codiHTML = codiHTML + '<input type="button" value="Afegir un nou Empleat/Usuari" onclick="seccioBackofficeUsuaris.mostraAfegeixUsuari()" />'
         }
 
