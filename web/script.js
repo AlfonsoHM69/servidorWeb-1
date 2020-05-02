@@ -3,6 +3,7 @@ var navegacio = null
 var popups = null
 var seccioBackofficeUsuaris = null
 var seccioFrontendProductes = null
+var seccioFrontendProducte = null
 
 // Aquesta funció s'inicia al carregar la pàgina
 async function inicia () {
@@ -13,6 +14,7 @@ async function inicia () {
     popups = new ObjPopups()
     seccioBackofficeUsuaris = new ObjSeccioBackofficeUsuaris()
     seccioFrontendProductes = new ObjSeccioFrontendProductes()
+    seccioFrontendProducte = new ObjSeccioFrontendProducte()
 
     // Inicia les funcions de navegació HTML5
     navegacio.inicia()
@@ -30,37 +32,11 @@ async function inicia () {
     await login.autenticaAmbToken()
 }
 
-function iniciaSeccio(seccio) {
+function iniciaSeccio(seccio, id) {
     switch(seccio) {
     case 'frontendProductes': seccioFrontendProductes.iniciaSeccio(); break
+    case 'frontendProducte':  seccioFrontendProducte.iniciaSeccio(id); break
     case 'backofficeUsuaris': seccioBackofficeUsuaris.iniciaSeccio(); break
     default:
     }
 }
-function mostraMenu (evt) {
-    let refBody = document.getElementsByTagName('body')[0],
-        refSmall = document.getElementById('frontendMenuMobil'),
-        refContainer = document.getElementById('menuContainer'),
-        estilContainer = window.getComputedStyle(refContainer, ''),
-        midaContainer = parseInt(estilContainer.getPropertyValue('height')),
-        altura = - midaContainer + 10
-
-    refBody.style.overflow = 'hidden' // Treure scroll
-    refSmall.style.visibility = 'visible'
-    refSmall.style.opacity = 1
-
-    refContainer.style.transform =  'translateY(' + altura + 'px)'
-}
-function amagaMenu (evt) {
-    let refBody = document.getElementsByTagName('body')[0],
-        refSmall = document.getElementById('frontendMenuMobil'),
-        refContainer = document.getElementById('menuContainer')
-
-    refBody.style.overflow = 'auto' // Recuperar scroll
-
-    refSmall.style.opacity = 0
-    setTimeout(() => { refSmall.style.visibility = 'hidden' }, 500)
-
-    refContainer.style.transform = 'translateY(0)'
-}
-

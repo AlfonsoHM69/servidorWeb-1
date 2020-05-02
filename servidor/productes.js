@@ -49,13 +49,24 @@ class Obj {
         }
     
         // Demana la informació de productes
-        try {
-            sql = 'SELECT * FROM productes'
-            taula = await db.promiseQuery(sql)
-        } catch (e) {
-            console.error(e)
-            return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})  
-        }   
+        
+        if (data.id) {
+            try {
+                sql = 'SELECT * FROM productes WHERE id=' + data.id
+                taula = await db.promiseQuery(sql)
+            } catch (e) {
+                console.error(e)
+                return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})  
+            }
+        } else {
+            try {
+                sql = 'SELECT * FROM productes'
+                taula = await db.promiseQuery(sql)
+            } catch (e) {
+                console.error(e)
+                return result.json({ resultat: "ko", missatge: "Error, funció llistatProductes: ha fallat la crida a les dades"})  
+            }
+        }
     
         // Si l'usuari existeix i s'ha identificat correctament (amb codi o amb token) retornem 'ok'
         if (typeof taula === 'object' && typeof taula.length === 'number') {

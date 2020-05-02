@@ -248,6 +248,10 @@ a:hover{
         padding-top: 1cm;
         padding-block-end: 2mm;
     }
+    .detall > h3 {
+        
+      
+    }
     
 }
 #grupImg{
@@ -295,7 +299,10 @@ color: black;
     #backofficeUsuaris {
        
     }
-    
+    .detall{
+        text-align: -webkit-center;
+        padding-left: 2cm ;
+    }
         
 }
 
@@ -453,4 +460,18 @@ justify-content: center;
 }
 #backofficeUsuaris{
    flex-direction: row;
+}
+#detall{
+    text-align: -webkit-center;
+}
+.detall > h3{ 
+    padding-left: 2cm
+    
+}
+.detall > div{ 
+  padding-left: 1cm;  
+    
+}
+#frontendProducte{
+    background-color:rgb(8, 241, 245);
 }

@@ -23,7 +23,8 @@ class ObjSeccioFrontendProductes {
         if (objRebut.resultat === 'ok') {
             for (cntProducte = 0; cntProducte < objRebut.missatge.length; cntProducte = cntProducte + 1) {
                 valor = objRebut.missatge[cntProducte]
-                codiHTML = codiHTML + '<img src="' + valor.imatge + '" width="100" />'
+                codiHTML = codiHTML + '<div class="producte" onclick=\'navegacio.canviaSeccio("frontendProducte&' + valor.id + '")\'>'
+                codiHTML = codiHTML + '<img src="' + valor.imatge + '" width="200" />'
                 codiHTML = codiHTML + '<h4>' + valor.nom +'</h4>'
                 codiHTML = codiHTML + '<div>' + valor.descripcio +'</div>'
                 codiHTML = codiHTML + '<div>' + valor.preu +' €</div>'
